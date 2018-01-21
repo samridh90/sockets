@@ -105,7 +105,7 @@ int main(void) {
         printf("server: got connection from %s\n", s);
 
         if (!fork()) { // in the child process
-            close(sockfd); // child doesn't connection listener
+            close(sockfd); // child doesn't need connection listener
             if (send(new_fd, "Hello, world!", 13, 0) == -1) {
                 perror("send");
             }
